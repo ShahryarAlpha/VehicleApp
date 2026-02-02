@@ -98,8 +98,8 @@ dotnet --version
 - Set both VehicleApi and VehicleBlazor to Start
 - Ensure VehicleApi is listed first
 - Two browser windows will open:
-	- API: https://localhost:7001/swagger
-	- Blazor: https://localhost:7026
+-	  API: https://localhost:7043/swagger
+	  Blazor: https://localhost:7026
 
 ### 3. Setup on Visual Studio Code
 
@@ -120,11 +120,11 @@ code --install-extension ms-dotnettools.csharp
 code --install-extension patcx.vscode-nuget-gallery
 ```
 
-### 4. Get the Project
+### 4. Get the Project from Git
 
 4.1  Clone the repository and open it in VS Code:
 
-	git clone <your-repository-url>
+	git clone https://github.com/ShahryarAlpha/VehicleApp.git
 	cd VehicleManagement
 	code .
 
