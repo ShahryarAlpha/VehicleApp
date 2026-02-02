@@ -103,38 +103,26 @@ dotnet --version
 
 ### 3. Setup on Visual Studio Code
 
-#### **3.1 Install VS Code Extensions (Required)**
 
-**Option 1: Install via VS Code UI**
-
-	Open VS Code → Extensions and install the following:
-
-	- C# Dev Kit (by Microsoft)
-	- C# (by Microsoft)
-	- NuGet Gallery (by pcislo)
-
-**Option 2: Install via Command Line**
-```bash
-code --install-extension ms-dotnettools.csdevkit
-code --install-extension ms-dotnettools.csharp
-code --install-extension patcx.vscode-nuget-gallery
-```
-
-### 4. Get the Project from Git
-
-4.1  Clone the repository and open it in VS Code:
+3.1  Clone the repository and open it in VS Code:
 
 	git clone https://github.com/ShahryarAlpha/VehicleApp.git
-	cd VehicleManagement
+	cd VehicleApp
 	code .
 
-4.2  Restore NuGet Packages
+3.2 Install VS Code Extensions
+
+	code --install-extension ms-dotnettools.csdevkit
+	code --install-extension ms-dotnettools.csharp
+	code --install-extension patcx.vscode-nuget-gallery
+
+3.3  Restore NuGet Packages
 
 	Open the VS Code terminal and run:
-	cd VehicleManagement
+	cd VehicleApp
 	dotnet restore
 
-4.3 Run Both Projects Manually
+3.4 Run Both Projects Manually
 
 **Terminal 1 – Run API**
 
@@ -147,7 +135,7 @@ code --install-extension patcx.vscode-nuget-gallery
 	cd VehicleBlazor
 	dotnet run
 
-4.4. Open in Browser
+3.5. Open in Browser
 
 1. API Swagger:
 	```https://localhost:7043/swagger```
