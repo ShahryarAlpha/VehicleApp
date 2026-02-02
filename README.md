@@ -92,6 +92,18 @@ Verify the installation:
 dotnet --version
 ```
 ### 2. Setup on Visual Studio 2022
+
+2.1  Clone the repository:
+
+	git clone https://github.com/ShahryarAlpha/VehicleApp.git
+
+2.2  Restore NuGet Packages
+
+	Open the Visual Studio terminal and run:
+	cd VehicleApp
+	dotnet restore
+
+2.3  Run Both Projects
 - Open VehicleManagement.sln in Visual Studio 2022
 - Right-click Solution → Configure Startup Projects
 - Select Multiple startup projects
@@ -110,19 +122,13 @@ dotnet --version
 	cd VehicleApp
 	code .
 
-3.2 Install VS Code Extensions
-
-	code --install-extension ms-dotnettools.csdevkit
-	code --install-extension ms-dotnettools.csharp
-	code --install-extension patcx.vscode-nuget-gallery
-
-3.3  Restore NuGet Packages
+3.2  Restore NuGet Packages
 
 	Open the VS Code terminal and run:
 	cd VehicleApp
 	dotnet restore
 
-3.4 Run Both Projects Manually
+3.3 Run Both Projects Manually
 
 **Terminal 1 – Run API**
 
@@ -135,7 +141,7 @@ dotnet --version
 	cd VehicleBlazor
 	dotnet run
 
-3.5. Open in Browser
+3.4. Open in Browser
 
 1. API Swagger:
 	```https://localhost:7043/swagger```
