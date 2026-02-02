@@ -1,0 +1,97 @@
+# ================================
+# .NET / ASP.NET Core
+# ================================
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ================================
+# Visual Studio
+# ================================
+.vs/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ================================
+# Build Results
+# ================================
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# ================================
+# NuGet
+# ================================
+*.nupkg
+*.snupkg
+# Uncomment if you want to ignore packages folder
+# packages/
+
+# ================================
+# User-specific files
+# ================================
+*.rsuser
+*.dbmdl
+*.jfm
+*.pidb
+*.svclog
+*.log
+
+# ================================
+# ASP.NET Core
+# ================================
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# ================================
+# Publish Output
+# ================================
+publish/
+wwwroot/lib/
+
+# ================================
+# OS Files
+# ================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ================================
+# Environment files
+# ================================
+.env
+.env.*
+
+# ================================
+# Test results
+# ================================
+TestResults/
+coverage/
+coverage.*
+
+# ================================
+# Rider / ReSharper
+# ================================
+.idea/
+*.sln.iml
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# ================================
+# Logs
+# ================================
+logs/
+*.log
