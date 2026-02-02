@@ -1,0 +1,68 @@
+﻿@using VehicleBlazor.Models
+
+<div class="custom-card">
+    <h3>Add New Vehicle</h3>
+
+    <Alert Message="@ErrorMessage" Type="Alert.AlertType.Error" />
+    <Alert Message="@SuccessMessage" Type="Alert.AlertType.Success" />
+
+    <EditForm Model="@Vehicle" OnValidSubmit="@HandleSubmit" class="modern-form">
+        <DataAnnotationsValidator />
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Make</label>
+                <InputText class="form-control"
+                           @bind-Value="Vehicle.Make"
+                           placeholder="e.g., Toyota, Honda, Ford" />
+                <ValidationMessage For="@(() => Vehicle.Make)" />
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Model</label>
+                <InputText class="form-control"
+                           @bind-Value="Vehicle.Model"
+                           placeholder="e.g., Camry, Accord, F-150" />
+                <ValidationMessage For="@(() => Vehicle.Model)" />
+            </div>
+
+            <div class="col-md-2 mb-3">
+                <label class="form-label">Year</label>
+                <InputNumber class="form-control"
+                             @bind-Value="Vehicle.Year"
+                             placeholder="@DateTime.Now.Year" />
+                <ValidationMessage For="@(() => Vehicle.Year)" />
+            </div>
+
+            <div class="col-md-2 mb-3">
+                <label class="form-label">&nbsp;</label>
+                <button type="submit"
+                        class="btn-modern btn-modern-primary w-100"
+                        disabled="@IsSubmitting">
+                    @if (IsSubmitting)
+                    {
+                        <span class="loading-spinner" style="border-top-color: white; border-width: 2px; width: 1rem; height: 1rem;"></span>
+                        <span class="ms-2">Adding...</span>
+                    }
+                    else
+                    {
+                        <span>Add Vehicle</span>
+                    }
+                </button>
+            </div>
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    [Parameter] public Vehicle Vehicle { get; set; } = new();
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public bool IsSubmitting { get; set; }
+    [Parameter] public string ErrorMessage { get; set; } = string.Empty;
+    [Parameter] public string SuccessMessage { get; set; } = string.Empty;
+
+    private async Task HandleSubmit()
+    {
+        await OnValidSubmit.InvokeAsync();
+    }
+}

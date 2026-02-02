@@ -1,0 +1,48 @@
+﻿@using VehicleBlazor.Models
+
+@if (IsLoading)
+{
+    <div class="text-center py-5">
+        <div class="loading-spinner"></div>
+        <p class="mt-3 text-muted">Loading vehicles...</p>
+    </div>
+}
+else if (Vehicles == null || !Vehicles.Any())
+{
+    <div class="empty-state">
+        <div class="empty-state-icon">📦</div>
+        <h4>No Vehicles Found</h4>
+        <p>Add your first vehicle using the form above</p>
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="modern-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var vehicle in Vehicles)
+                {
+                    <tr>
+                        <td>@vehicle.Id</td>
+                        <td>@vehicle.Make</td>
+                        <td>@vehicle.Model</td>
+                        <td>@vehicle.Year</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@code {
+    [Parameter] public List<Vehicle>? Vehicles { get; set; }
+    [Parameter] public bool IsLoading { get; set; }
+}

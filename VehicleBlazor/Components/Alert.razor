@@ -1,0 +1,36 @@
+﻿<div>
+    @if (!string.IsNullOrEmpty(Message))
+    {
+        <div class="modern-alert @CssClass">
+            <span>@Icon</span>
+            <span>@Message</span>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public string Message { get; set; } = string.Empty;
+    [Parameter] public AlertType Type { get; set; } = AlertType.Info;
+
+    private string Icon => Type switch
+    {
+        AlertType.Success => "✓",
+        AlertType.Error => "⚠️",
+        AlertType.Info => "ℹ️",
+        _ => ""
+    };
+
+    private string CssClass => Type switch
+    {
+        AlertType.Success => "modern-alert-success",
+        AlertType.Error => "modern-alert-danger",
+        _ => ""
+    };
+
+    public enum AlertType
+    {
+        Success,
+        Error,
+        Info
+    }
+}
